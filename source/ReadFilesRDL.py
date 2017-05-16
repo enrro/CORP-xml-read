@@ -12,6 +12,7 @@ for child in root:
 
 print("\n next \n")
 
+
 print(root[1][0][0])
 print(root[1][0][0].text)
 
