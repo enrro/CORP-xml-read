@@ -9,7 +9,7 @@ def tag_uri_and_name(elem):
     return uri, tag
 
 
-tree = ET.parse('../resources/CMF Analyst Metrics Report.xml')
+tree = ET.parse('../resources/CMF Analyst Metrics Report.rdl')
 root = tree.getroot()
 print(root.tag)
 uri = tag_uri_and_name(root)
@@ -17,18 +17,23 @@ uri = tag_uri_and_name(root)
 for child in root:
     print(child.tag)
 
-print("\n next \n")
-
-
-print(root[1][0][0])
-print(root[1][0][0].text)
+#
+# print("\n next \n")
+#
+#
+# print(root[1][0][0])
+# print(root[1][0][0].text)
 
 print("\n The DataSourceReference is \n")
 
 
-for child in root.iter('{' + uri[0] + '}' + "DataSourceReference"):
+#iterate through the array to find the DataSoruce and find the attributes by name
+for child in root.iter('{' + uri[0] + '}' + "DataSource"):
     #print(child.tag)
     #print(child.attrib)
-    print(child.text)
+    print(child.attrib['Name'])
+
+
+    #print(child.text)
     # if child.tag == "{http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition}DataSources":
     #     print("reasd")

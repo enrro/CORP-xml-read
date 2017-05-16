@@ -1,6 +1,6 @@
 from lxml import etree
 
-tree = etree.parse('../resources/CMF Analyst Metrics Report.xml')
+#tree = etree.parse('../resources/CMF Analyst Metrics Report.rdl')
 
 root = tree.getroot()
 #print(root.tag)
