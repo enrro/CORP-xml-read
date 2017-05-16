@@ -15,7 +15,7 @@ def tag_uri_and_name(elem):
 filesList = (os.listdir("../resources/"))
 
 for file in filesList:
-    print(file)
+
 
     tree = ET.parse('../resources/' + file)
     root = tree.getroot()
@@ -32,7 +32,7 @@ for file in filesList:
     # print(root[1][0][0])
     # print(root[1][0][0].text)
 
-    print("\n The DataSourceReference is \n")
+    print(file + " DataSourceReference is")
 
 
     #iterate through the array to find the DataSoruce and find the attributes by name
@@ -40,8 +40,18 @@ for file in filesList:
         #print(child.tag)
         #print(child.attrib)
         print(child.attrib['Name'])
-        print("\n")
 
-        #print(child.text)
-        # if child.tag == "{http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition}DataSources":
-        #     print("reasd")
+
+        for child in root.iter('{' + uri[0] + '}' + "CommandType"):
+            print(child.text)
+            # if child.tag == "{http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition}DataSources":
+            #     print("reasd")
+            for child1 in root.iter('{' + uri[0] + '}' + "CommandText"):
+                print(child1.text)
+
+    n = -1
+    for child in root.iter('{' + uri[0] + '}' + "CommandText"):
+        n = n + 1
+        print(n)
+
+    print('\n')
