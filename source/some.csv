@@ -1,2 +1,6 @@
-hi
-1,2,3,4,5
+name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
+CMF Analyst Metrics Report.rdl,trnBPM,1, CMF_rptGetAnalystMetrics,0
+CMF CatalogReport.rdl,trnBPM,1, CMF_rptCatalogReport,3
+CMF Granted Roles Report.rdl,trnBPM,1, CMF_rptGrantedRolesReport,5
+CMF Productivity Report.rdl,trnBPM,1, CMF_rptAnalystProductivity,0
+CTR Granted Roles.rdl,trnBPM,4, uspGetReportHeaderImage eCTR_ruspGetMeps eCTR_ruspGrantedRoles eCTR_ruspGetRoles,0
