@@ -19,39 +19,37 @@ for file in filesList:
 
     tree = ET.parse('../resources/' + file)
     root = tree.getroot()
-    print(root.tag)
+    #print(root.tag)
     uri = tag_uri_and_name(root)
 
-    for child in root:
-        print(child.tag)
 
-    #
-    # print("\n next \n")
-    #
-    #
-    # print(root[1][0][0])
-    # print(root[1][0][0].text)
+
 
     print(file + " DataSourceReference is")
 
 
     #iterate through the array to find the DataSoruce and find the attributes by name
     for child in root.iter('{' + uri[0] + '}' + "DataSource"):
-        #print(child.tag)
-        #print(child.attrib)
         print(child.attrib['Name'])
 
+    numberOfStoredProcedures = 0
+    for child in root.iter('{' + uri[0] + '}' + "CommandType"):
+        #print(child.text)
+        numberOfStoredProcedures = numberOfStoredProcedures + 1
+    # for child1 in root.iter('{' + uri[0] + '}' + "CommandText"):
+    print("number of stop procedures = ", numberOfStoredProcedures)
 
-        for child in root.iter('{' + uri[0] + '}' + "CommandType"):
-            print(child.text)
-            # if child.tag == "{http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition}DataSources":
-            #     print("reasd")
-            for child1 in root.iter('{' + uri[0] + '}' + "CommandText"):
-                print(child1.text)
-
-    n = -1
+    numberOfQueries = 0
     for child in root.iter('{' + uri[0] + '}' + "CommandText"):
-        n = n + 1
-        print(n)
+        if numberOfStoredProcedures > 0:
+            print(child.text)
+            numberOfStoredProcedures = numberOfStoredProcedures - 1
+        else:
+            numberOfQueries = numberOfQueries + 1
+
+
+
+
+    print("number of queues ", numberOfQueries)
 
     print('\n')

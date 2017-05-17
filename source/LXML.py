@@ -1,17 +1,9 @@
 from lxml import etree
+import csv
 
-#tree = etree.parse('../resources/CMF Analyst Metrics Report.rdl')
-
-root = tree.getroot()
-#print(root.tag)
-#print(len(root))
-
-tag = etree.QName(root)
-print(print(tag.localname))
-print(tag.namespace)
-print(tag.text)
-print(root.find(".//DataSourceName").tag)
-#parser = etree.XMLParser(target = EchoTarget())
-
-#print(etree.tostring(tree.getroot()))
-
+someiterable = ["hi"]
+someiterable1 = [1,2,3,4,5]
+import csv
+writer = csv.writer(open("some.csv", "w"), dialect='excel', lineterminator='\n')
+writer.writerow(someiterable)
+writer.writerow(someiterable1)
