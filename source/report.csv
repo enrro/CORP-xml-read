@@ -14,9 +14,7 @@ CMF,Credit Ageing Report.rdl, trnBPM,1, CMF_rptAgingReport,0
 CMF,Credit Analyst Metrics Report.rdl, trnBPM,1, CMF_rptGetAnalystMetrics,0
 CMF,Credit Details Report.rdl, trnBPM,1, CMF_rptCreditDetails,0
 CMF,Credit Productivity Report.rdl, trnBPM,1, CMF_rptAnalystProductivity,0
-CMF,Status Report.rdl, trnBPM,2," CMF_rptStatusReport SELECT   '<ALL>' AS RegionCode,'<ALL>'  AS RegionName 
-UNION
-SELECT RegionCode, RegionName FROM catRegion where Active = 1 and ParentRegionID IS null ",4
+CMF,Status Report.rdl, trnBPM,2, CMF_rptStatusReport CMF_rptGetCustomers,4
 eCPR,CTR Granted Roles.rdl, trnBPM,4, uspGetReportHeaderImage eCTR_ruspGetMeps eCTR_ruspGrantedRoles eCTR_ruspGetRoles,0
 eCPR,CTR Status Report.rdl, EBPM_DWH,1, eCTR_ruspStatusReport,0
 eCPX,Capex Detailed.rdl, trnBPM,1, eCPX_rptCapexDetailed,0

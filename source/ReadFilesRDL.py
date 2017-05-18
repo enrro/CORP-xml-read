@@ -35,7 +35,6 @@ for directory in folders:
         root = tree.getroot()
         uri = tag_uri_and_name(root)
 
-        print(file + " DataSourceReference is")
         information[1] = file
 
         #iterate through the array to find the DataSoruce and find the attributes by name
@@ -44,26 +43,26 @@ for directory in folders:
             dataSourceName = dataSourceName + " " + child.attrib['Name']
         information[2] = dataSourceName
         #iterate for procedures
+        b = False
         numberOfStoredProcedures = 0
-        for child in root.iter('{' + uri[0] + '}' + "CommandType"):
-            #print(child.text)
-            numberOfStoredProcedures = numberOfStoredProcedures + 1
-
-        # for child1 in root.iter('{' + uri[0] + '}' + "CommandText"):
-        print("number of stop procedures = ", numberOfStoredProcedures)
+        nameOfStoredProcedures = ""
+        for child in root.iter():
+            if child.tag == ('{' + uri[0] + '}' + "CommandType"):
+                numberOfStoredProcedures = numberOfStoredProcedures + 1
+                b = True
+            if child.tag == ('{' + uri[0] + '}' + "CommandText") and b == True:
+                nameOfStoredProcedures = nameOfStoredProcedures + " " + (child.text)
+                b = False
         information[3] = numberOfStoredProcedures
         #iterate for queries
         numberOfQueries = 0
-        nameOfStoredProcedures = ""
+
         for child in root.iter('{' + uri[0] + '}' + "CommandText"):
             if numberOfStoredProcedures > 0:
-                nameOfStoredProcedures = nameOfStoredProcedures + " " + (child.text)
                 numberOfStoredProcedures = numberOfStoredProcedures - 1
             else:
                 numberOfQueries = numberOfQueries + 1
 
         information[4] = nameOfStoredProcedures
-        print("number of queues ", numberOfQueries)
         information[5] = numberOfQueries
-        print('\n')
         writer.writerow(information)
