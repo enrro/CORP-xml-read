@@ -1,4 +1,4 @@
-directory,name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
+directory,name of file,Data Source,number of procedure,name of stored procedures,number of Queries
 ATR,ATR Granted roles report.rdl, trnBPM,0,,1
 ATR,ATRAssetStatusReport.rdl, trnBPM,0,,0
 ATR,ATRDetailedReport.rdl, trnBPM,0,,1
@@ -6,7 +6,6 @@ ATR,ATRRequestReport.rdl, trnBPM,0,,0
 ATR,CPX Finance Steps In Process.rdl, trnBPM,1, eCPX_rptGetCapexInProgress,0
 ATR,DATASTREAM_IDLE_ASSETS.rdl, DS1T1,0,,5
 ATR,PrintICV.rdl, EBPM_DWH,1, ATR_ruspPrintICV,0
-directory,name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
 CMF,CMF CatalogReport.rdl, trnBPM,1, CMF_rptCatalogReport,3
 CMF,CMF Granted Roles Report.rdl, trnBPM,1, CMF_rptGrantedRolesReport,5
 CMF,CMF Productivity Report.rdl, trnBPM,1, CMF_rptAnalystProductivity,0
@@ -18,10 +17,8 @@ CMF,Credit Productivity Report.rdl, trnBPM,1, CMF_rptAnalystProductivity,0
 CMF,Status Report.rdl, trnBPM,2," CMF_rptStatusReport SELECT   '<ALL>' AS RegionCode,'<ALL>'  AS RegionName 
 UNION
 SELECT RegionCode, RegionName FROM catRegion where Active = 1 and ParentRegionID IS null ",4
-directory,name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
 eCPR,CTR Granted Roles.rdl, trnBPM,4, uspGetReportHeaderImage eCTR_ruspGetMeps eCTR_ruspGrantedRoles eCTR_ruspGetRoles,0
 eCPR,CTR Status Report.rdl, EBPM_DWH,1, eCTR_ruspStatusReport,0
-directory,name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
 eCPX,Capex Detailed.rdl, trnBPM,1, eCPX_rptCapexDetailed,0
 eCPX,Capex Finance Steps.rdl, trnBPM,0,,0
 eCPX,Capex Granted Roles.rdl, trnBPM,1, eCPX_rptGrantedRoles,0
@@ -33,7 +30,6 @@ eCPX,CPX Finance Steps In Process.rdl, trnBPM,1, eCPX_rptGetCapexInProgress,0
 eCPX,NIKE Open Capex Requests.rdl, trnBPM,2, eCPX_GetCapexReportSpecial uspGetReportHeaderImage,0
 eCPX,PRJ Finance Steps In Process.rdl, trnBPM,1, eCPX_rptGetCapexInProgress,0
 eCPX,Projects In Progress.rdl.uuk4g2o.partial, trnBPM,1, eCPX_rptGetCapexInProgress,0
-directory,name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
 eFX,eFX Approved Business Partner Report.rdl, trnBPM,1, eFX_ruspGetApprovedBusinessPartner,0
 eFX,eFX Detailed Report.rdl, EBPM_DWH,6, ruspeFXGetInvoices ruspeFXGetCompanies ruspeFXGetStatuses ruspeFXGetActivityTasks ruspeFXGetMepCodes ruspeFXGetProductLines,0
 eFX,eFX Detailed Report.rdl.sz8a0qc.partial, EBPM_DWH,6, ruspeFXGetInvoices ruspeFXGetCompanies ruspeFXGetStatuses ruspeFXGetActivityTasks ruspeFXGetMepCodes ruspeFXGetProductLines,0
@@ -42,7 +38,6 @@ eFX,eFX Open Tasks.rdl, trnBPM,5, eFX_ruspGetCompanies eFX_ruspGetCustomers eFX_
 eFX,eFX Preview Report.rdl, EBPM_DWH,1, ruspeFXGetPreviewInvoices,0
 eFX,eFX Transaction Report.rdl, trnBPM EBPM_DWH,1, eFX_ruspTransactionReport,3
 eFX,eFX Transaction Report.rdl.m5vf034.partial, trnBPM EBPM_DWH,1, eFX_ruspTransactionReport,3
-directory,name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
 eVMF,VMF Aging Detail.rdl, trnBPM,5, eVMF_ruspAgingDetail eVMF_rptGetCompany eVMF_rptGetMepCodes eVMF_rptGetRegion eVMF_rptGetGbsCenters,0
 eVMF,VMF Aging Summary By Queue Report.rdl, trnBPM,1, eVMF_ruspAgingSummaryReportByQueue,0
 eVMF,VMF Aging Summary Report.rdl, trnBPM,1, eVMF_ruspAgingSummaryReport,0
@@ -61,20 +56,15 @@ eVMF,VMF TAT Dashboard.rdl, EBPM_DWH,6, eVMF_ruspTATForDashboard eVMF_ruspGetCom
 eVMF,VMF TAT Details.rdl, EBPM_DWH,6, eVMF_ruspTATDetail eVMF_ruspGetCompanies eVMF_ruspGetMepCodes eVMF_ruspGetRegions eVMF_rptGetGbsCenters eVMF_ruspGetRequestTypes,0
 eVMF,VMF TAT.rdl, EBPM_DWH,6, eVMF_ruspTAT eVMF_ruspGetCompanies eVMF_ruspGetMepCodes eVMF_ruspGetRegions eVMF_rptGetGbsCenters eVMF_ruspGetRequestTypes,0
 eVMF,VMF TDA.rdl, trnBPM,10, eVMF_ruspTDAGeneralReportbyWeek eVMF_ruspTDAGeneralReport eVMF_rptGetVendorType eVMF_rptGetVendorCategory eVMF_rptGetRegion eVMF_rptGetSite eVMF_rptGetCompany eVMF_rptGetQueue eVMF_rptGetRequestType eVMF_rptGetRequestStatus,0
-directory,name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
 FEM,FEM Granted Roles.rdl, trnBPM,5, FEM_ruspGrantedRoles FEM_ruspGetCostCenters FEM_ruspGetMepCodes FEM_ruspGetRoles FEM_ruspGetSegments,0
 FEM,FEM Request Summary.rdl, trnBPM,5, FEM_ruspRequestSummary FEM_ruspGetCostCenters FEM_ruspGetMepCodes FEM_ruspGetSegments FEM_ruspGetStatuses,0
-directory,name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
 GTR,GTR Granted Roles Report.rdl, eBPM,0,,7
 GTR,GTR Status Report.rdl, eBPM,0,,9
-directory,name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
 Hedge,Hedge Granted Roles.rdl, trnBPM,5, HDG_ruspGrantedRoles HDG_ruspGetBusinessUnits HDG_ruspGetMepCodes HDG_ruspGetRoles uspGetReportHeaderImage,0
 Hedge,Hedge Status Report.rdl, EBPM_DWH,1, HDG_ruspStatusReport,0
-directory,name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
 IAA,IAADetailedReport.rdl, TrnEBPM_QA,1, IAA_uspDetailedReport,10
 IAA,IAATransactionLogReport.rdl, TrnEBPM_QA,1, IAA_uspTransactionLogReport,6
 IAA,IAA_StatusReport.rdl, TrnEBPM_QA,1, IAA_uspGetStatusReport,11
-directory,name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
 ICV,DetailedReport.rdl, trnBPM,1, ICV_uspDetailedReport,0
 ICV,HistoricalDetailedReport.rdl, ICV,1, ICV_uspDetailedReport,6
 ICV,HistoricalGrantedRoles.rdl, ICV,1, ICV_uspGrantedRolesReport,2
@@ -84,12 +74,10 @@ ICV,ICV Attachment Hyperlink.rdl, trnBPM,1, ICV_uspAttachmentReport,3
 ICV,ICV_GrantedRolesReport.rdl, trnBPM,0,,1
 ICV,ICV_StatusReport.rdl, trnBPM,1, ICV_uspGetStatusReport,0
 ICV,MEPValidation.rdl, trnBPM,4, ICV_uspMEPValidationReportGral ICV_uspMEPValidationReportAccounts ICV_uspMEPValidationReportBP ICV_uspMEPValidationReportApprovers,1
-directory,name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
 MRF,ABS.rdl, eBPM_DWH,1, MRF_ruspABS,0
 MRF,Approval Matrix.rdl, trnBPM,4, ruspGetReportHeaderImage MRF_ruspGetCompanies MRF_ruspGetMepCodes MRF_ruspApprovalMatrix,0
 MRF,Request Details.rdl, eBPM_DWH,1, MRF_ruspRequestDetails,0
 MRF,Triangular - Bilateral.rdl, eBPM_DWH,1, MRF_ruspTriangularBilateral,0
-directory,name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
 PFA,All Details Report - History.rdl, trnBPM,1, PFA_ruspAllDetailsHistoryReport,0
 PFA,All Details Report - Parts.rdl, trnBPM,1, PFA_ruspAllDetailsPartsReport,0
 PFA,All Details Report.rdl, trnBPM,1, PFA_ruspAllDetailsReport,0
@@ -105,15 +93,10 @@ PFA,Summary Report By Month.rdl, EBPM_DWH,1, PFA_ruspSummaryReportByMonth,0
 PFA,Summary Report by Owner.rdl, EBPM_DWH,1, PFA_ruspSummaryReportByOwner,0
 PFA,Summary Report By Project.rdl, EBPM_DWH,1, PFA_ruspSummaryReportByProject,0
 PFA,User Report.rdl, EBPM_DWH,1, PFA_ruspUserReport,0
-directory,name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
 POA,POA_StatusReport.rdl, trnBPM,6, POA_rptStatusReport eBPM_rptuspGetRegions eBPM_rptGetCountryByRegion eBPM_rptGetSiteByCountryPlugin POA_rptGetLegalEntity eBPM_rptGetMepsBySite,0
-directory,name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
-directory,name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
 Support,ErrorHandler.rdl, DataSource1,0,,1
-directory,name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
 TAX,TAX Granted Roles.rdl, trnBPM,5, TAX_ruspGrantedRoles TAX_ruspGetRegions TAX_ruspGetRoles uspGetReportHeaderImage TAX_ruspGetLegalEntitesByRegion,0
 TAX,TAX Status Report.rdl, EBPM_DWH trnBPM,6, TAX_ruspStatusReport TAX_ruspGetRegions TAX_ruspGetQueues ATR_ruspGetStatus ATR_ruspGetTaxYear TAX_ruspGetLegalEntitesByRegion,0
-directory,name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
 VOC,Average score by user type.rdl, trnEBPM,1, Survey_ruspGetResponseRate,0
 VOC,Average Score By Verticals Site.rdl, trnEBPM,1, Survey_ruspAverageScoreByVerticalsSite,0
 VOC,Detailed average score by service Deep dive 2.rdl, trnEBPM,1, Survey_ruspGetRateByService,0
@@ -131,7 +114,6 @@ VOC,Survey Responses.rdl, trnEBPM,1, Survey_ruspGetSurveyResponses,0
 VOC,User Log Details.rdl, DataSource1,4, survey_ruspuserLogDetails Survey_ruspGetPeriodAndRole Survey_ruspGetPeriodAndRole Survey_ruspGetPeriodAndRole,0
 VOC,Verticals By Level.rdl, trnEBPM,0,,1
 VOC,Verticals By Site.rdl, trnEBPM,0,,1
-directory,name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
 VPL,Invoice Report.rdl, VPL_Invoice_Report UserAccess,0,,4
 VPL,User Access.rdl, VPL_UserAccess,0,,2
 VPL,VPL invoice header.rdl, VPL_Invoice_Header,0,,1
@@ -141,7 +123,6 @@ VPL,VPL Transaction Invoice Details Report.rdl, VPL_TransactionInvoiceDetails_Re
 VPL,VPL Transaction Report.rdl, VPL_Transaction_Report_Optika285v03,0,,1
 VPL,VPL_Invoices_Report.rdl, sacnt158,0,,1
 VPL,VPL_RejectionCount.rdl, Optikacustom285v03,1, VPL_uspReportInvoiceRejectionDetails,0
-directory,name of file,number of stored procedures,number of procedure,name of stored procedures,number of queue
 XPA,XPA Dashboard Request.rdl, trnBPM,2, XPA_ruspDashboarByRequestReport XPA_ruspDashboarByRequestReport,0
 XPA,XPA Summary Report Detail.rdl, trnBPM,7, XPA_ruspSummaryReportDetail XPA_rptGetRegion XPA_rptGetCompanies XPA_rptGetQueue XPA_rptGetRequestStatus XPA_rptGetBusinessUnit XPA_rptGetMEPCodes,0
 XPA,XPA Summary Report.rdl, trnBPM,8, XPA_ruspSummaryReport XPA_rptGetRegion XPA_rptGetQueue XPA_rptGetRequestStatus XPA_rptGetBusinessUnit XPA_rptGetMEPCodes XPA_rptGetCompanies XPA_rptGetChildMepCodes,0
