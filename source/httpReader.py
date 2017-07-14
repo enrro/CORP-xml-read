@@ -19,6 +19,7 @@ r1 = requests.get(url, auth=HTTPBasicAuth(username, password))
 
 print ('r1', r1)
 print(r1.headers)
-'''r = requests.get("http://sacnte335/Reports/Pages/Folder.aspx",auth=('domain/gdlebric','Qeehs46,'))
+
+
+r = requests.get("http://sacnte335/Reports/Pages/Folder.aspx",auth=(username, password))
 print(r.status_code)
-'''
